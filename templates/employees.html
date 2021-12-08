@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Departments{% endblock %}
+
+{% block content %}
+    <div id="table1">
+        <div id="info">
+            <div id="main_info">
+                <div id="main_info_block"></div>
+
+            </div>
+        </div>
+        <div id="search">
+            <div id="search_title" class="your-style-h2">Search</div>
+            <input class='search_input' placeholder="Name">
+            <input class='search_input' placeholder="Department">
+            <p class="input_title">Salary </br> <input class='search_input1' placeholder="From"> - <input
+                    class='search_input1' placeholder="To"></p>
+            <p class="input_title">Date of birth </br> <input class='search_input1' placeholder="01.01.1991"> - <input
+                    class='search_input1' placeholder="01.01.2021"></p>
+            <input id='search_button' type="submit" value="Find">
+            <input id='search_button' type="reset" value="Reset">
+        </div>
+    </div>
+{% endblock content %}
