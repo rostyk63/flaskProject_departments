@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 # basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1963@localhost:5432/dep_em'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1963@localhost:5432/departments'
 db = SQLAlchemy(app)
 
 
@@ -22,7 +22,7 @@ class Department(db.Model):
 
     def __init__(self, name, employees=None):
         self.name = name
-        self.employees = employees
+        self.employees = employees or []
 
     def __repr__(self):
         return f'Department name: {self.name} {list(self.employees)}'
@@ -50,17 +50,15 @@ def populate_database():
     Populate database with employees and departments
     :return: None
     """
+    db.drop_all()
+    db.create_all()
     department_1 = Department('Epam')
     department_2 = Department('SoftServe')
     department_3 = Department('Sombra')
 
-    employee_1 = Employee('Nenchyn Pavlo', 700, date(1996, 5, 12), department_1)
-    employee_2 = Employee('Oleh Petryliak', 950, date(1993, 2, 23), department_2)
-    employee_3 = Employee('Makam Galant', 700, date(1989, 11, 30), department_3)
-
-    department_1.employees = [employee_1]
-    department_2.employees = [employee_2]
-    department_3.employees = [employee_3]
+    employee_1 = Employee('Nenchyn Pavlo', 700, date(2002, 8, 22), department_1)
+    employee_2 = Employee('Oleh Petryliak', 950, date(2002, 10, 4), department_2)
+    employee_3 = Employee('Makam Galant', 700, date(1989, 11, 25), department_3)
 
     db.session.add(department_1)
     db.session.add(department_2)
@@ -75,10 +73,17 @@ def populate_database():
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+@app.route('/departments')
+def departments():  # put application's code here
     return render_template('departments.html')
 
 
+@app.route('/employees')
+def employees():
+    return render_template('employees.html')
+
+
+populate_database()
+print(Department.query.all())
 if __name__ == '__main__':
-    populate_database()
     app.run(debug=True)

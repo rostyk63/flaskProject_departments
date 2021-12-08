@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/style.css">
-    <title>Department//Employee</title>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
 </head>
 <body>
-<h1 class="your-style">Departments//Employee</h1>
+<h1 class="your-style">Departments//Employees</h1>
 <div id="line"></div>
 {% block content %}
-{% endblock %}
-<!--<div id="table1"></div>
-<p class="table1">Department</p> -->
+{% endblock content %}
+
 </body>
 </html>
