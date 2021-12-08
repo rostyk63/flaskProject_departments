@@ -75,7 +75,8 @@ def populate_database():
 @app.route('/')
 @app.route('/departments')
 def departments():  # put application's code here
-    return render_template('departments.html')
+    departments = Department.query.all()
+    return render_template('departments.html', departments=departments)
 
 
 @app.route('/employees')
