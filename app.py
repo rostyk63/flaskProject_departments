@@ -4,11 +4,13 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
+from sqlalchemy import and_, func, desc, asc
 
 app = Flask(__name__)
 # basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1963@localhost:5432/departments'
 db = SQLAlchemy(app)
+app.config['SECRET_KEY'] = 'fgjknfgjkngdklgoeri'
 
 
 class Department(db.Model):
@@ -42,7 +44,7 @@ class Employee(db.Model):
         self.department = department
 
     def __repr__(self):
-        return f'Employee: {self.name}, salary: {self.salary}'
+        return f'Employee: {self.name}, salary: {self.salary}, birth: {self.date_of_birth}'
 
 
 def populate_database():
@@ -72,11 +74,43 @@ def populate_database():
     db.session.close()
 
 
-@app.route('/')
-@app.route('/departments')
+def avg_salary_(id_):
+    employees1 = db.session.query(Employee).join(Department).filter(Department.id == id_).all()
+    try:
+        return round(sum(map(lambda employee: employee.salary, employees1)) / len(employees1), 2)
+    except ZeroDivisionError:
+        return 0
+
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired, Length
+
+
+class DepartmentForm(FlaskForm):
+    """
+    Department form
+    """
+    name = StringField('Name: ',
+                       validators=[
+                           Length(min=3, max=100,
+                                  message="Name should be from 3 up to 100 symbols"),
+                           DataRequired()
+                       ])
+    submit = SubmitField('')
+
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/departments', methods=['GET', 'POST'])
 def departments():  # put application's code here
-    departments = Department.query.all()
-    return render_template('departments.html', departments=departments)
+    form = DepartmentForm()
+    departments_list = Department.query.all()
+    if form.validate_on_submit():
+        departments_list = Department.query.filter(Department.name == form.name.data).all()
+    departments_ = [{'name': department.name, 'avg_salary': avg_salary_(department.id)} for department in
+                    departments_list]
+
+    return render_template('departments.html', departments=departments_, form=form)  # , departments=departments)
 
 
 @app.route('/employees')
@@ -84,7 +118,23 @@ def employees():
     return render_template('employees.html')
 
 
-populate_database()
-print(Department.query.all())
+def avg_salary():
+    return Department.query.filter(Employee)
+
+
+# populate_database()
+def all_departments():
+    return Department.query.all()
+
+
+def employee_by_date(x, y):
+    return Employee.query.filter(Employee.date_of_birth <= x.filter(
+        Employee.date_of_birth >= y)).all()
+
+
+def department_by_name(name):
+    return Department.query.filter(Department.name == name).all()
+
+
 if __name__ == '__main__':
     app.run(debug=True)

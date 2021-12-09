@@ -10,16 +10,26 @@
                     <div id="department_name" class="your-style-h1">Department</div>
                     <div id="department_salary " class="your-style-h2">AVG salary</div>
                 </div>
+                {% for departament in departments %}
+                    <div id="main_info_block">
+                        <img id='info_image' src="{{ url_for('static', filename='images/info.png') }}">
+                        <div id="department_name" class="your-style-h1">{{ departament['name'] }}</div>
+                        <div id="department_salary" class="your-style-h1">{{ departament['avg_salary'] }} $</div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
+    <form method="post">
+        {{ form.hidden_tag() }}
         <div id="search">
             <div id="search_title" class="your-style-h2">Search</div>
-            <input class='search_input' placeholder="Department name">
+            {{ form.name(class='search_input', placeholder="Department name") }}
             <input class='search_input' placeholder="Min AVG salary">
             <input class='search_input' placeholder="Max AVG salary">
             <input class='search_input' placeholder="Min amount of employees">
             <input class='search_input' placeholder="Max amount of employees">
-            <input id='search_button' type="submit" value="Find">
+            {{ form.submit(id='search_button', value="Find") }}
         </div>
+    </form>
     </div>
 {% endblock content %}
