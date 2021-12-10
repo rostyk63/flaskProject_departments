@@ -2,30 +2,57 @@
 {% block title %}Departments{% endblock %}
 
 {% block content %}
-    <div id="table1">
-        <div id="info">
-            <div id="main_info">
-                <div id="main_info_block">
-                    {#                    {% for department in departments %}#}
-                    {#                    <div id="main_info_block">#}
-                    {#                        <div id='info_image'></div>#}
-                    {#                        <div id="department_name" class="your-style-h1">{{ department.name }}</div>#}
-                    {#                    </div>#}
-                    {#                    {% endfor %}#}
+    <div id="table2">
+        <div id="info1">
+            <div id="main_info1">
+                <div id="main_info_block1">
+                    <div id='info_image1'></div>
+                    <div id="department_name1" class="your-style-h1">Name</div>
+                    <div id="department_department1" class="your-style-h2">Department</div>
+                    <div id="department_salary1" class="your-style-h2">Salary</div>
+                    <div id="department_date1" class="your-style-h2">Date of birth</div>
                 </div>
-
+                {% for employee in employees %}
+                    <div id="main_info_block1">
+                        <img id='info_image1' src="{{ url_for('static', filename='images/edit.png') }}">
+                        <div id="department_name1" class="your-style-h1">{{ employee['name'] }}</div>
+                        <div id="department_department1" class="your-style-h2">{{ employee['department'] }}</div>
+                        <div id="department_salary1" class="your-style-h2">{{ employee['salary'] }}$</div>
+                        <div id="department_date1" class="your-style-h2">{{ employee['date_of_birth'] }}</div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-        <div id="search">
-            <div id="search_title" class="your-style-h2">Search</div>
-            <input class='search_input' placeholder="Name">
-            <input class='search_input' placeholder="Department">
-            <p class="input_title">Salary </br> <input class='search_input1' placeholder="From"> - <input
-                    class='search_input1' placeholder="To"></p>
-            <p class="input_title">Date of birth </br> <input class='search_input1' placeholder="01.01.1991"> - <input
-                    class='search_input1' placeholder="01.01.2021"></p>
-            <input id='search_button' type="submit" value="Find">
-            <input id='search_button' type="reset" value="Reset">
-        </div>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div id="search1">
+                <div id="search_title1" class="your-style-h2">Search</div>
+                {{ form.name(class='search_input11', placeholder="Name") }}
+                {{ form.department(class='search_input11', placeholder="Department") }}
+                <p class="input_title1">Salary </br> {{ form.salary_from(class='search_input12', placeholder="From") }}
+                    - {{ form.salary_to(class='search_input12', placeholder="To") }}</p>
+                <p class="input_title1">Date of
+                    birth </br> {{ form.birth_from(class='search_input12', placeholder="01.01.1991") }}
+                    - {{ form.birth_to(class='search_input12', placeholder="01.01.2021") }}</p>
+                {{ form.find(id='search_button1', value="Find") }}
+                <input id='search_button1' type="reset" value="Reset">
+            </div>
+        </form>
     </div>
+    <script type="text/javascript">
+
+
+        function reset_fun() {
+            const text_inputs = document.getElementsByClassName('search_input11');
+            for (let i = 0; i < text_inputs.length; i++) {
+                text_inputs[i].setAttribute('value', '');
+            }
+            const num_inputs = document.getElementsByClassName('search_input12');
+            for (let i = 0; i < num_inputs.length; i++) {
+                num_inputs[i].setAttribute('value', undefined);
+            }
+
+        }
+
+    </script>
 {% endblock content %}
