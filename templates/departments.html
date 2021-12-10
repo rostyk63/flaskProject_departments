@@ -19,17 +19,17 @@
                 {% endfor %}
             </div>
         </div>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        <div id="search">
-            <div id="search_title" class="your-style-h2">Search</div>
-            {{ form.name(class='search_input', placeholder="Department name") }}
-            {{ form.min_avg_salary(class='search_input', placeholder="Min AVG salary") }}
-            {{ form.max_avg_salary(class='search_input', placeholder="Max AVG salary") }}
-            {{ form.min_employee(class='search_input', placeholder="Min amount of employees") }}
-            {{ form.max_employee(class='search_input', placeholder="Max amount of employees") }}
-            {{ form.submit(id='search_button', value="Find") }}
-        </div>
-    </form>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div id="search">
+                <div id="search_title" class="your-style-h2">Search</div>
+                {{ form.name(class='search_input', placeholder="Department name") }}
+                {{ form.min_avg_salary(class='search_input', placeholder="Min AVG salary") }}
+                {{ form.max_avg_salary(class='search_input', placeholder="Max AVG salary") }}
+                {{ form.min_employee(class='search_input', placeholder="Min amount of employees") }}
+                {{ form.max_employee(class='search_input', placeholder="Max amount of employees") }}
+                {{ form.submit(id='search_button', value="Find") }}
+            </div>
+        </form>
     </div>
 {% endblock content %}

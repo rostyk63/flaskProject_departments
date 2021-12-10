@@ -113,6 +113,7 @@ body {
     border-bottom: 1px solid #3f3d3d;
 
 }
+
 #department_department {
 
     height: 100%;
@@ -120,6 +121,7 @@ body {
     grid-area: dd;
     border-bottom: 1px solid #3f3d3d;
 }
+
 #department_date {
 
     height: 100%;
@@ -128,12 +130,14 @@ body {
     border-bottom: 1px solid #3f3d3d;
 
 }
+
 #main_info_block {
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr 1fr;
     grid-template-areas: 'ii dn dd ds dd1';
     margin-bottom: 35px;
 }
+
 #info_image {
     grid-area: ii;
     margin: auto;
@@ -156,7 +160,7 @@ body {
 
 }
 
-#search_button{
+#search_button {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
     font-style: normal;
@@ -173,11 +177,12 @@ body {
     margin-left: 40px;
 
 
-
 }
-#search_title{
+
+#search_title {
     margin: 30px;
 }
+
 .search_input1 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
@@ -191,6 +196,7 @@ body {
     border: none;
     padding-left: 15px;
 }
+
 .input_title {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
