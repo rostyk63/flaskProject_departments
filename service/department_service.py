@@ -3,21 +3,21 @@ from models.employee import Employee
 from models.department import Department
 
 
-def avg_salary_(id_):
-    employees1 = db.session.query(Employee).join(Department).filter(Department.id == id_).all()
+def get_avg_salary(department_id):
+    employees = db.session.query(Employee).join(Department).filter(Department.id == department_id).all()
     try:
-        return round(sum(map(lambda employee: employee.salary, employees1)) / len(employees1), 2)
+        return round(sum(map(lambda employee: employee.salary, employees)) / len(employees), 2)
     except ZeroDivisionError:
         return 0
 
 
-def get_amount_of_employee(id_):
-    return len(db.session.query(Employee).join(Department).filter(Department.id == id_).all())
+def get_amount_of_employee(department_id):
+    return len(db.session.query(Employee).join(Department).filter(Department.id == department_id).all())
 
 
-def all_departments():
+def get_all_departments():
     return Department.query.all()
 
 
-def department_by_name(name):
-    return Department.query.filter(Department.name == name).all()
+def get_department_by_name(department_name):
+    return Department.query.filter(Department.name == department_name).all()
