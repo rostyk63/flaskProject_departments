@@ -54,7 +54,7 @@ body {
 
 }
 
-#table1 {
+#table2 {
     width: 1757px;
     height: 608px;
     background: #d2cdcd;
@@ -68,7 +68,7 @@ body {
 
 }
 
-#info {
+#info1 {
     width: 100%;
     height: 100%;
     grid-area: info1;
@@ -76,7 +76,7 @@ body {
 
 }
 
-#search {
+#search1 {
     width: 100%;
     height: 100%;
     grid-area: search1;
@@ -87,7 +87,7 @@ body {
 
 }
 
-#main_info {
+#main_info1 {
     width: 100%;
     height: 100%;
     grid-area: mi;
@@ -97,7 +97,7 @@ body {
 
 }
 
-#department_name {
+#department_name1 {
 
     height: 100%;
     width: 100%;
@@ -105,7 +105,7 @@ body {
     border-bottom: 1px solid #3f3d3d;
 }
 
-#department_salary {
+#department_salary1 {
 
     height: 100%;
     width: 100%;
@@ -114,7 +114,7 @@ body {
 
 }
 
-#department_department {
+#department_department1 {
 
     height: 100%;
     width: 100%;
@@ -122,7 +122,7 @@ body {
     border-bottom: 1px solid #3f3d3d;
 }
 
-#department_date {
+#department_date1 {
 
     height: 100%;
     width: 100%;
@@ -131,19 +131,19 @@ body {
 
 }
 
-#main_info_block {
+#main_info_block1 {
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr 1fr;
     grid-template-areas: 'ii dn dd ds dd1';
     margin-bottom: 35px;
 }
 
-#info_image {
+#info_image1 {
     grid-area: ii;
     margin: auto;
 }
 
-.search_input {
+.search_input11 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
     font-style: normal;
@@ -160,7 +160,7 @@ body {
 
 }
 
-#search_button {
+#search_button1 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
     font-style: normal;
@@ -179,11 +179,11 @@ body {
 
 }
 
-#search_title {
+#search_title1 {
     margin: 30px;
 }
 
-.search_input1 {
+.search_input12 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
     font-style: normal;
@@ -197,7 +197,7 @@ body {
     padding-left: 15px;
 }
 
-.input_title {
+.input_title1 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
     font-style: normal;
