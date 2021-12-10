@@ -82,9 +82,13 @@ def avg_salary_(id_):
         return 0
 
 
+def get_amount_of_employee(id_):
+    return len(db.session.query(Employee).join(Department).filter(Department.id == id_).all())
+
+
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Length
+from wtforms import StringField, SubmitField, IntegerField, DecimalField
+from wtforms.validators import DataRequired, Length, NumberRange, Optional
 
 
 class DepartmentForm(FlaskForm):
@@ -95,8 +99,33 @@ class DepartmentForm(FlaskForm):
                        validators=[
                            Length(min=3, max=100,
                                   message="Name should be from 3 up to 100 symbols"),
-                           DataRequired()
+                           Optional()
+                           # DataRequired()
                        ])
+    min_avg_salary = DecimalField('Salary: ',
+                                  validators=[
+                                      NumberRange(min=0, max=100_000, message='Salary should be positive'),
+                                      Optional()
+                                      # DataRequired()
+                                  ])
+    max_avg_salary = DecimalField('Salary: ',
+                                  validators=[
+                                      NumberRange(min=0, max=100_000, message='Salary should be positive'),
+                                      Optional()
+                                      # DataRequired()
+                                  ])
+    min_employee = DecimalField('Salary: ',
+                                validators=[
+                                    NumberRange(min=0, max=100_000, message='Salary should be positive'),
+                                    Optional()
+                                    # DataRequired()
+                                ])
+    max_employee = DecimalField('Salary: ',
+                                validators=[
+                                    NumberRange(min=0, max=100_000, message='Salary should be positive'),
+                                    Optional()
+                                    # DataRequired()
+                                ])
     submit = SubmitField('')
 
 
@@ -105,21 +134,30 @@ class DepartmentForm(FlaskForm):
 def departments():  # put application's code here
     form = DepartmentForm()
     departments_list = Department.query.all()
-    if form.validate_on_submit():
-        departments_list = Department.query.filter(Department.name == form.name.data).all()
-    departments_ = [{'name': department.name, 'avg_salary': avg_salary_(department.id)} for department in
+    departments_ = [{'name': department.name, 'avg_salary': avg_salary_(department.id),
+                     'employee_count': get_amount_of_employee(department.id)} for department in
                     departments_list]
-
+    if form.validate_on_submit():
+        if form.name.data:
+            departments_ = filter(lambda department: department['name'] == form.name.data, departments_)
+        if form.min_avg_salary.data:
+            departments_ = filter(lambda department: department['avg_salary'] >= form.min_avg_salary.data, departments_)
+        if form.max_avg_salary.data or form.max_avg_salary.data == 0:
+            departments_ = filter(lambda department: department['avg_salary'] <= form.max_avg_salary.data, departments_)
+        if form.min_employee.data:
+            departments_ = filter(lambda department: department['employee_count'] >= form.min_employee.data,
+                                  departments_)
+        if form.max_employee.data or form.max_employee.data == 0:
+            departments_ = filter(lambda department: department['employee_count'] <= form.max_employee.data,
+                                  departments_)
+    departments_ = list(departments_)
+    print(departments_)
     return render_template('departments.html', departments=departments_, form=form)  # , departments=departments)
 
 
 @app.route('/employees')
 def employees():
     return render_template('employees.html')
-
-
-def avg_salary():
-    return Department.query.filter(Employee)
 
 
 # populate_database()
