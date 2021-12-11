@@ -12,7 +12,7 @@ from service.department_service import get_all_departments, get_avg_salary, get_
 from service.employee_service import get_all_employee, get_employee_department
 
 
-# @app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/departments', methods=['GET', 'POST'])
 def departments():
     form = DepartmentForm()
@@ -41,7 +41,6 @@ def departments():
     return render_template('departments.html', departments=name_salary_employees, form=form)
 
 
-@app.route('/', methods=['GET', 'POST'])
 @app.route('/employees', methods=['GET', 'POST'])
 def employees():
     form = EmployeeForm()
