@@ -19,8 +19,8 @@ class DepartmentForm(FlaskForm):
                                       NumberRange(min=0, max=100_000, message='Salary should be positive'), Optional()])
     min_employee = DecimalField('Min amount of employee: ',
                                 validators=[
-                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), ])
+                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), Optional()])
     max_employee = DecimalField('Max amount of employee: ',
                                 validators=[
-                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), ])
+                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), Optional()])
     find = SubmitField('')
