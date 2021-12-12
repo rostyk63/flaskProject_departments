@@ -11,7 +11,11 @@ body {
 
 /*::-webkit-scrollbar-track{border-radius: 10px; box-shadow: inset 0 0 5px gray;}*/
 /*::-webkit-scrollbar-thumb{border-radius: 10px; box-shadow: inset 0 0 5px gray;}*/
-a{text-decoration: none; color: #ffffff}
+a {
+    text-decoration: none;
+    color: #ffffff
+}
+
 @font-face {
     font-family: "AC Boucle";
     src: url("/fonts/ACBoucle.ttf") format("ttf"),
@@ -191,7 +195,6 @@ a{text-decoration: none; color: #ffffff}
     overflow-x: hidden;
 
 
-
 }
 
 #search1 {
@@ -341,24 +344,39 @@ a{text-decoration: none; color: #ffffff}
 
 }
 
-#info_block_department{
+#info_block_department {
     display: block;
     margin: 0 auto;
     width: 50%;
 
 }
-.department_first_line{
+
+.department_first_line {
     display: inline-flex;
     height: 50px;
 }
-.department_second_line{
+
+.department_second_line {
     display: inline-flex;
-    height:50px;
+    height: 50px;
 }
-.department_first_line p:first-child{width: 250px}
-.department_first_line p:last-child{margin-left: 70px}
-.department_second_line p:first-child{width: 250px}
-.department_second_line p:last-child{margin-left: 70px}
+
+.department_first_line p:first-child {
+    width: 250px
+}
+
+.department_first_line p:last-child {
+    margin-left: 70px
+}
+
+.department_second_line p:first-child {
+    width: 250px
+}
+
+.department_second_line p:last-child {
+    margin-left: 70px;
+    width: 300px;
+}
 
 .your-style-h3 {
     font-family: 'AC Boucle', serif;
@@ -375,6 +393,7 @@ a{text-decoration: none; color: #ffffff}
     height: 35px;
     color: black;
 }
+
 .your-style-h4 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
@@ -384,6 +403,7 @@ a{text-decoration: none; color: #ffffff}
     font-size: 56px;
     margin: 0 auto;
 }
+
 .your-style-h5 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
@@ -405,6 +425,7 @@ a{text-decoration: none; color: #ffffff}
     margin-right: 20px;
 
 }
+
 /*#info2::-webkit-scrollbar-thumb{outline: 1px solid slategray;}*/
 #main_info2 {
     width: 100%;
@@ -412,6 +433,7 @@ a{text-decoration: none; color: #ffffff}
     display: block;
     margin: 20px;
 }
+
 #main_info_block2 {
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr;
@@ -419,6 +441,7 @@ a{text-decoration: none; color: #ffffff}
     margin-bottom: 35px;
     /*position: fixed;*/
 }
+
 .your-style-h6 {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
@@ -430,13 +453,15 @@ a{text-decoration: none; color: #ffffff}
     margin-bottom: 0;
     height: 50px;
 }
+
 #main_info_block3 {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr;
+    grid-template-columns: 40px 1fr 1fr 1fr;
     grid-template-areas: 'ii dn ds dd1';
     margin-bottom: 5px;
     /*position: fixed;*/
 }
+
 #danylo {
     font-family: 'AC Boucle', serif;
     font-weight: normal;
@@ -453,18 +478,79 @@ a{text-decoration: none; color: #ffffff}
     margin: 0 auto;
 
 }
-#danylo_add{
+
+#danylo_add {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-#header_1{
+#header_1 {
     display: inline-flex;
     margin: 13px 10px 0 10px;
     text-align: center;
     width: 100%;
 }
-#a_1{
+
+#a_1 {
     margin: auto 0;
+    text-align: center;
+}
+
+#table4 {
+    width: 555px;
+    height: 608px;
+    background: #d2cdcd;
+    border-radius: 20px;
+    margin: 80px auto auto auto;
+    display: block;
+
+    /*margin-top: 80px;*/
+
+}
+
+#employee_pht {
+    text-align: center;
+}
+
+.your-style-h8 {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #3f3d3d;
+    font-size: 56px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.your-style-h9 {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    color: #3f3d3d;
+    font-size: 46px;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: 70px;
+}
+#edit_employee {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    width: 25%;
+    height: 55px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7d7a7a;
+    font-size: 44px;
+    color: #ffffff;
+    padding-bottom: 10px;
+    margin: 0 auto;
+
 }
