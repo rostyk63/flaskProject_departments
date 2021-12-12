@@ -8,8 +8,8 @@ app.config['SECRET_KEY'] = 'fgjknfgjkngdklgoeri'
 
 from forms.department_form import DepartmentForm
 from forms.employee_form import EmployeeForm
-from service.department_service import get_all_departments, get_avg_salary, get_amount_of_employee
-from service.employee_service import get_all_employee, get_employee_department
+from service.department_service import *
+from service.employee_service import *
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -17,10 +17,9 @@ from service.employee_service import get_all_employee, get_employee_department
 def departments():
     form = DepartmentForm()
     departments_list = get_all_departments()
-    name_salary_employees = [{'name': department.name, 'avg_salary': get_avg_salary(department.id),
+    name_salary_employees = [{'name': department.name, 'avg_salary': get_avg_salary(department.id), 'id': department.id,
                               'employee_count': get_amount_of_employee(department.id)} for department in
                              departments_list]
-    print(name_salary_employees)
     if form.validate_on_submit():
         if form.name.data:
             name_salary_employees = filter(lambda department: department['name'] == form.name.data,
@@ -46,9 +45,10 @@ def employees():
     form = EmployeeForm()
     employees_list = get_all_employee()
     employee_info = [{'name': employee.name, 'department': get_employee_department(employee.department_id)[0][0],
-                      'salary': employee.salary, 'date_of_birth': employee.date_of_birth} for employee in
+                      'salary': employee.salary, 'date_of_birth': employee.date_of_birth, 'id': employee.id} for
+                     employee in
                      employees_list]
-    print(employee_info)
+    # print(employee_info)
     if form.validate_on_submit():
         if form.name.data:
             employee_info = filter(lambda employee: employee['name'] == form.name.data, employee_info)
@@ -66,6 +66,34 @@ def employees():
 
     employee_info = list(employee_info)
     return render_template('employees.html', employees=employee_info, form=form)
+
+
+@app.route('/departments/<int:department_id>', methods=['GET', 'POST'])
+def department_get(department_id):
+    department = get_department_by_id(department_id)
+    department_info = {'name': department.name, 'avg_salary': int(get_avg_salary(department.id)),
+                       'employee_count': get_amount_of_employee(department.id),
+                       'min_salary': get_min_salary(department.id), 'max_salary': get_max_salary(department.id)}
+    # print(department_info)
+    employees_list = get_employees_by_department(department_id)
+    employee_infos = [
+        {'name': employee.name, 'salary': employee.salary, 'date_of_birth': employee.date_of_birth, 'id': employee.id}
+        for
+        employee in
+        employees_list]
+    # print(employee_infos)
+    return render_template('department.html', department=department_info,
+                           employees=employee_infos)
+
+
+@app.route('/employees/<int:employee_id>', methods=['GET', 'POST'])
+def employee_get(employee_id):
+    employee = get_employee_by_id(employee_id)
+    # print(employee)
+    employee_info = {'name': employee.name, 'salary': employee.salary, 'birthday': employee.date_of_birth,
+                     'department': get_employee_department(employee.department_id)[0][0]}
+    # print(employee_info)
+    return render_template('employee.html', employee=employee_info)
 
 
 if __name__ == '__main__':
