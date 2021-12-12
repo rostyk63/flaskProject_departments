@@ -15,3 +15,12 @@ def get_all_employee():
 def get_employee_department(department_id):
     return db.session.query(Department.name).filter(Department.id == department_id).all()
 
+
+def get_employee_by_id(employee_id):
+    """
+    Fetches the department with given id
+    if there is no such department return None
+    :param department_id: id of the department to be fetched
+    :return: department with given id or None
+    """
+    return db.session.query(Employee).filter_by(id=employee_id).first()
