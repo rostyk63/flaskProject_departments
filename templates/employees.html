@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Departments{% endblock %}
+{% block title %}Employee{% endblock %}
 
 {% block content %}
     <div id="table2">
@@ -14,7 +14,7 @@
                 </div>
                 {% for employee in employees %}
                     <div id="main_info_block1">
-                        <img id='info_image1' src="{{ url_for('static', filename='images/edit.png') }}">
+                        <a id="a_1" href="/employees/{{ employee['id']}}"><img id='info_image1' src="{{ url_for('static', filename='images/info.png') }}"></a>
                         <div id="department_name1" class="your-style-h1">{{ employee['name'] }}</div>
                         <div id="department_department1" class="your-style-h2">{{ employee['department'] }}</div>
                         <div id="department_salary1" class="your-style-h2">{{ employee['salary'] }}$</div>
