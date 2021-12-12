@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Employee{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div id="table4">
+        <div id="header_1">
+            <a id='a_1' href="http://127.0.0.1:5000/employees"><img id='a_1' src="/static/images/back.png"/></a>
+        </div>
+        <div id="employee_pht">
+            <img src="/static/images/employee_photo.png/">
+        </div>
+        <div>
+            <p class="your-style-h9">Name> {{ employee['name'] }}</p>
+            <p class="your-style-h9">Salary> {{ employee['salary'] }}$</p>
+            <p class="your-style-h9">Birthday> {{ employee['birthday'] }}</p>
+            <p class="your-style-h9">Department> {{ employee['department'] }}</p>
+        </div>
+        <div id="danylo_add">
+            <button id="edit_employee">Edit</button>
+            <button id="edit_employee">Remove</button>
+        </div>
+    </div>
+{% endblock %}
