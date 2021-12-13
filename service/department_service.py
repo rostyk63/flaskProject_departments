@@ -48,3 +48,31 @@ def get_max_salary(department_id):
 
 def get_employees_by_department(department_id):
     return db.session.query(Employee).filter_by(department_id=department_id).all()
+
+
+def update_department_name(department_id, name):
+    q = db.session.query(Department)
+    q = q.filter(Department.id == department_id)
+    record = q.one()
+    record.name = name
+
+    db.session.commit()
+
+
+def create_department(name):
+    db.session.add(Department(name))
+    db.session.commit()
+
+
+def add_employee_to_department(name, salary, birthday, department):
+    db.session.add(Employee(name, salary, birthday, department))
+    db.session.commit()
+
+
+def rename_department(department_id, name):
+    q = db.session.query(Department)
+    q = q.filter(Department.id == department_id)
+    record = q.one()
+    record.name = name
+
+    db.session.commit()
