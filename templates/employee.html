@@ -10,14 +10,21 @@
             <img src="/static/images/employee_photo.png/">
         </div>
         <div>
-            <p class="your-style-h9">Name> {{ employee['name'] }}</p>
-            <p class="your-style-h9">Salary> {{ employee['salary'] }}$</p>
-            <p class="your-style-h9">Birthday> {{ employee['birthday'] }}</p>
-            <p class="your-style-h9">Department> {{ employee['department'] }}</p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_name"><img id='info_image'
+                                                                                                       src="/static/images/edit.png"></a>Name> {{ employee['name'] }}
+            </p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_salary"><img id='info_image'
+                                                                                                         src="/static/images/edit.png"></a>Salary> {{ employee['salary'] }}$
+            </p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_birthday"><img
+                    id='info_image' src="/static/images/edit.png"></a>Birthday> {{ employee['birthday'] }}</p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_department"><img
+                    id='info_image' src="/static/images/edit.png"></a>Department> {{ employee['department'] }}</p>
         </div>
-        <div id="danylo_add">
-            <button id="edit_employee">Edit</button>
-            <button id="edit_employee">Remove</button>
-        </div>
+        <form action="" method="post">
+            <div id="danylo_add">
+                <input type='submit' id="edit_employee" name="remove_employee" value="Remove">
+            </div>
+        </form>
     </div>
 {% endblock %}
