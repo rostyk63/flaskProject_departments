@@ -5,22 +5,22 @@
     <div id="table3">
         <div id="header_1">
             <a id='a_1' href="http://127.0.0.1:5000/departments"><img src="/static/images/back.png"/></a>
-            <h1 class="your-style-h4">{{ department['name'] }}</h1>
+            <h1 class="your-style-h4">{{ department['name'] }} <a id='a_2'
+                                                                  href="http://127.0.0.1:5000/departments/{{ department['id'] }}/edit"><img
+                    src="/static/images/edit.png"/></a></h1>
         </div>
         <div id="info_block_department">
-
             <div class="department_first_line">
-                <p class="your-style-h3">AVG salary&#65306;{{ department['avg_salary'] }}$</p>
+                <p class="your-style-h3">AVG salary {{ department['avg_salary'] }}$</p>
                 <p class="your-style-h3">Amount <img id='employee_img'
-                                                     src="/static/images/employee.png"/>&#65306;{{ department['employee_count'] }}
+                                                     src="/static/images/employee.png"/> {{ department['employee_count'] }}
                 </p>
             </div>
             <div class="department_second_line">
                 <!--&#10246;-->
-                <p class="your-style-h3">Max salary&#65306;{{ department['max_salary'] }}$</p>
-                <p class="your-style-h3">Min salary&#65306;{{ department['min_salary'] }}$</p>
+                <p class="your-style-h3">Max salary {{ department['max_salary'] }}$</p>
+                <p class="your-style-h3">Min salary {{ department['min_salary'] }}$</p>
             </div>
-
         </div>
         <h1 class="your-style-h5">Employees</h1>
         <div id="info2">
@@ -33,18 +33,19 @@
                 </div>
                 {% for employee in employees %}
                     <div id="main_info_block3">
-
-                        <a id="a_1" href="/employees/{{ employee['id']}}"><img id='info_image' src="/static/images/edit.png"></a>
+                        <a id="a_1" href="/employees/{{ employee['id'] }}"><img id='info_image'
+                                                                                src="/static/images/edit.png"></a>
                         <div id="department_name" class="your-style-h6">{{ employee['name'] }}</div>
                         <div id="department_salary" class="your-style-h6">{{ employee['salary'] }}$</div>
                         <div id="department_date1" class="your-style-h6">{{ employee['date_of_birth'] }}</div>
-
                     </div>
                 {% endfor %}
             </div>
         </div>
-        <div id="danylo_add">
-            <button id="danylo">Add</button>
-        </div>
+        <form action="" method="post">
+            <div id="_add">
+                <a type='submit' href="http://127.0.0.1:5000/departments/{{ department['id'] }}/add" id="add_employee2">Add</a>
+            </div>
+        </form>
     </div>
 {% endblock %}
