@@ -4,16 +4,17 @@
 {% block content %}
     <div id="table5">
         <div id="header_2">
-            <a id='a_1' href="http://127.0.0.1:5000/employees/{{ employee['id'] }}"><img id='a_1' src="/static/images/back.png"/></a>
+            <a id='a_1' href="http://127.0.0.1:5000/employees/{{ employee['id'] }}"><img id='a_1'
+                                                                                         src="/static/images/back.png"/></a>
             <h1 class="your-style-h4">{{ employee['name'] }}</h1>
         </div>
         <form action="" method="post">
-        <div id="change_birthday">
-            <input type="date" id='employee_new_birthday' placeholder="New birthday" name="employee_new_birthday">
-        </div>
-        <div id="danylo_add">
-            <input type="submit" id="edit_employee" name="edit_employee" value="Save">
-        </div>
+            <div id="change_birthday">
+                <input type="date" id='employee_new_birthday' placeholder="New birthday" name="employee_new_birthday">
+            </div>
+            <div id="danylo_add">
+                <input type="submit" id="edit_employee" name="edit_employee" value="Save">
+            </div>
         </form>
     </div>
 {% endblock %}
