@@ -19,8 +19,15 @@ class DepartmentForm(FlaskForm):
                                       NumberRange(min=0, max=100_000, message='Salary should be positive'), Optional()])
     min_employee = DecimalField('Min amount of employee: ',
                                 validators=[
-                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), Optional()])
+                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'),
+                                    Optional()])
     max_employee = DecimalField('Max amount of employee: ',
                                 validators=[
-                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'), Optional()])
+                                    NumberRange(min=0, max=100_000, message='Amount of employee should be positive'),
+                                    Optional()])
+    create_name = StringField('Name: ',
+                              validators=[
+                                  Length(min=3, max=100,
+                                         message="Name should be from 3 up to 100 symbols"), Optional()])
+    create_button = SubmitField('')
     find = SubmitField('')
