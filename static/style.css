@@ -19,7 +19,6 @@ a {
 @font-face {
     font-family: "AC Boucle";
     src: url("/fonts/ACBoucle.ttf") format("ttf"),
-    url("/fonts/ACBoucle.woff") format("woff"),
     url("/fonts/ACBoucle.eot") format('eot');
 }
 
@@ -826,4 +825,38 @@ a {
     margin: 0 auto;
     margin-top: 5px;
 
+}
+.your-style-404 {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #ffffff;
+    font-size: 154px;
+    margin-top: 250px;
+    margin-bottom: 0;
+    height: 150px;
+}
+.your-style-error {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #ffffff;
+    font-size: 64px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.your-style-page-not-exist {
+    font-family: 'AC Boucle', serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+#error_page{
+    text-align: left;
 }
