@@ -1,21 +1,21 @@
-2021-12-19 22:14:48,583 WARNING werkzeug:  * Debugger is active!2021-12-19 22:15:18,140 INFO werkzeug:  * Restarting with stat
+2021-12-19 22:50:41,359 WARNING werkzeug:  * Debugger is active!2021-12-19 22:50:52,076 INFO werkzeug:  * Restarting with stat
 3-672
-2021-12-19 22:14:48,634 INFO werkzeug:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-12-19 22:14:49,621 DEBUG department_app: main_page.html was rendered
-2021-12-19 22:14:49,627 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:49] "GET / HTTP/1.1" 200 -
-2021-12-19 22:14:49,714 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
-2021-12-19 22:14:50,418 DEBUG department_app: Departments: [Department name: Epam [Employee: Nenchyn Pavlo, salary: 700, birth: 2002-08-22, Employee: Patsay Vladyslav, salary: 100, birth: 2002-10-03, Employee: Halik OleksandOr, salary: 55, birth: 1989-07-01], Department name: SoftServe [Employee: Petryliak Oleh, salary: 950, birth: 2002-10-04], Department name: Sombra [Employee: Galant Makam, salary: 700, birth: 1989-11-25], Department name: GlobalLogic [Employee: Dmytrasevych Iryna, salary: 5000, birth: 2002-06-05], Department name: Incora [Employee: Ihor Sohan Molodets, salary: 299, birth: 2002-01-01], Department name: SerVer [Employee: Pasichnyk1 Noname, salary: 10, birth: 2002-06-05]]
-2021-12-19 22:14:50,438 DEBUG department_app: departments.html was rendered
-2021-12-19 22:14:50,447 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:50] "GET /departments HTTP/1.1" 200 -
-2021-12-19 22:14:50,471 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:50] "[36mGET /static/images/info.png HTTP/1.1[0m" 304 -
-2021-12-19 22:14:50,477 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
-2021-12-19 22:14:51,265 DEBUG department_app: Department data: Department name: Epam [Employee: Nenchyn Pavlo, salary: 700, birth: 2002-08-22, Employee: Patsay Vladyslav, salary: 100, birth: 2002-10-03, Employee: Halik OleksandOr, salary: 55, birth: 1989-07-01]
-2021-12-19 22:14:51,277 DEBUG department_app: Employees data: [Employee: Nenchyn Pavlo, salary: 700, birth: 2002-08-22, Employee: Patsay Vladyslav, salary: 100, birth: 2002-10-03, Employee: Halik OleksandOr, salary: 55, birth: 1989-07-01]
-2021-12-19 22:14:51,277 DEBUG department_app: department.html was rendered
-2021-12-19 22:14:51,283 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "GET /departments/1 HTTP/1.1" 200 -
-2021-12-19 22:14:51,306 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "[36mGET /static/images/back.png/ HTTP/1.1[0m" 304 -
-2021-12-19 22:14:51,314 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "[36mGET /static/images/edit.png/ HTTP/1.1[0m" 304 -
-2021-12-19 22:14:51,314 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "[36mGET /static/images/employee.png/ HTTP/1.1[0m" 304 -
-2021-12-19 22:14:51,317 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
-2021-12-19 22:14:51,318 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:14:51] "[36mGET /static/images/edit.png HTTP/1.1[0m" 304 -
-2021-12-19 22:15:18,060 INFO werkzeug:  * Detected change in 'C:\\Users\\rosma\\PycharmProjects\\flaskProject1\\department_app\\__init__.py', reloading
+2021-12-19 22:50:41,409 INFO werkzeug:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-12-19 22:50:42,563 DEBUG department_app: main_page.html was rendered
+2021-12-19 22:50:42,572 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:42] "GET / HTTP/1.1" 200 -
+2021-12-19 22:50:42,666 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2021-12-19 22:50:43,294 DEBUG department_app: Departments: [Department name: Epam [Employee: Nenchyn Pavlo, salary: 700, birth: 2002-08-22, Employee: Patsay Vladyslav, salary: 100, birth: 2002-10-03, Employee: Halik OleksandOr, salary: 55, birth: 1989-07-01], Department name: SoftServe [Employee: Petryliak Oleh, salary: 950, birth: 2002-10-04], Department name: Sombra [Employee: Galant Makam, salary: 700, birth: 1989-11-25], Department name: GlobalLogic [Employee: Dmytrasevych Iryna, salary: 5000, birth: 2002-06-05], Department name: Incora [Employee: Ihor Sohan Molodets, salary: 299, birth: 2002-01-01], Department name: SerVer [Employee: Pasichnyk1 Noname, salary: 10, birth: 2002-06-05]]
+2021-12-19 22:50:43,313 DEBUG department_app: departments.html was rendered
+2021-12-19 22:50:43,322 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:43] "GET /departments HTTP/1.1" 200 -
+2021-12-19 22:50:43,347 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:43] "[36mGET /static/images/info.png HTTP/1.1[0m" 304 -
+2021-12-19 22:50:43,353 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2021-12-19 22:50:44,450 DEBUG department_app: Department data: Department name: GlobalLogic [Employee: Dmytrasevych Iryna, salary: 5000, birth: 2002-06-05]
+2021-12-19 22:50:44,462 DEBUG department_app: Employees data: [Employee: Dmytrasevych Iryna, salary: 5000, birth: 2002-06-05]
+2021-12-19 22:50:44,462 DEBUG department_app: department.html was rendered
+2021-12-19 22:50:44,469 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "GET /departments/4 HTTP/1.1" 200 -
+2021-12-19 22:50:44,498 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "[36mGET /static/images/back.png/ HTTP/1.1[0m" 304 -
+2021-12-19 22:50:44,498 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "[36mGET /static/images/edit.png/ HTTP/1.1[0m" 304 -
+2021-12-19 22:50:44,501 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "[36mGET /static/images/employee.png/ HTTP/1.1[0m" 304 -
+2021-12-19 22:50:44,501 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "[36mGET /static/images/edit.png HTTP/1.1[0m" 304 -
+2021-12-19 22:50:44,507 INFO werkzeug: 127.0.0.1 - - [19/Dec/2021 22:50:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2021-12-19 22:50:51,947 INFO werkzeug:  * Detected change in 'C:\\Users\\rosma\\PycharmProjects\\flaskProject1\\config.py', reloading
