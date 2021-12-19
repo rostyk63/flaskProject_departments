@@ -3,12 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import logging
 from config import ProductionConfig
+import os
 
+MIGRATION_DIR = os.path.join('department_app', 'migrations')
 app = Flask(__name__)
 app.config.from_object(ProductionConfig)
 
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+migrate = Migrate(app, db, directory=MIGRATION_DIR)
 
 from department_app.views import departments_view
 from department_app.views import employees_view
