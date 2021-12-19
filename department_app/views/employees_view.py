@@ -1,4 +1,4 @@
-from app import app
+from department_app import app
 from flask import render_template, request, flash, redirect
 from department_app.forms.employee_form import EmployeeForm
 from department_app.service.employee_service import *
