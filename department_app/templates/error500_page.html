@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href={{ url_for('static', filename='/style.css') }}>
+    <title> Error </title>
+</head>
+<body>
+<div id="error_page">
+    <h1 class="your-style-404">500</h1>
+    <h1 class="your-style-error">Internal Server Error</h1>
+    <h1 class="your-style-page-not-exist">The server encountered an internal error and was unable to complete your
+        request. Either the server is overloaded or there is an error in the application.</h1>
+    <h1 class="your-style-error"><a href={{ url_for('main_page') }}>Back to main page</a></h1>
+</div>
+</body>
+</html>

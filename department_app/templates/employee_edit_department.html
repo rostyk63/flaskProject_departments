@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Edit {{ employee['name'] }}{% endblock %}
+
+{% block content %}
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <div id="table5">
+        <div id="header_2">
+            <a id='a_1' href={{ url_for('employee_get', employee_id=employee['id']) }}><img id='a_1'
+                                                                                             src={{ url_for('static', filename='images/back.png') }}/></a>
+            <h1 class="your-style-h4">{{ employee['name'] }}</h1>
+        </div>
+        <form action="" method="post">
+            <div id="change_dep_emp">
+                <input type="text" id='employee_new_dep' placeholder="New department" name="employee_new_dep" required
+                       minlength="3">
+            </div>
+            <div id="danylo_add">
+                <input type='submit' id="edit_employee" name="edit_employee" value="Save">
+            </div>
+        </form>
+    </div>
+{% endblock %}

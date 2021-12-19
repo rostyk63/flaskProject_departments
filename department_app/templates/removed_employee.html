@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Removed employee{% endblock %}
+
+{% block content %}
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <div id="table4">
+        <div id="header_1">
+            <a id='a_1' href={{ url_for('employees') }}><img id='a_1' src={{ url_for('static', filename='images/back.png') }}/></a>
+        </div>
+        <div id="employee_pht">
+            <img src={{ url_for('static', filename='images/employee_photo.png') }}>
+        </div>
+    </div>
+{% endblock %}

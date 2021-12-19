@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}New department{% endblock %}
+
+{% block content %}
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <div id="table5">
+        <div id="header_2">
+            <a id='a_1' href={{ url_for('departments') }}><img id='a_1' src={{ url_for('static', filename='images/back.png') }}/></a>
+            <h1 class="your-style-h4">New department</h1>
+        </div>
+        <form action="" method="POST">
+            <div id="change_name_dep">
+                <input type="text" id='department_new_name' placeholder="Name" name='name' required minlength="1">
+            </div>
+            <div id="danylo_add">
+                <input type='submit' id="edit_employee" name="departament_new_name" value="Create">
+            </div>
+        </form>
+    </div>
+{% endblock %}

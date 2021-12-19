@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Edit {{ department['name'] }}{% endblock %}
+
+{% block content %}
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <div id="table7">
+        <div id="header_2">
+            <a id='a_1' href={{ url_for('department_get', department_id=department['id']) }}><img id='a_1'
+                                                                                                  src={{ url_for('static', filename='images/back.png') }}/></a>
+            <h1 class="your-style-h4">{{ department['name'] }}</h1>
+        </div>
+        <form action="" method="POST">
+            <div id="change_name_dep">
+                <input type='text' id='department_new_name' placeholder="New name" name='department_new_name' required
+                       minlength="1">
+            </div>
+            <div id="danylo_add">
+                <input type='submit' id="edit_employee" name="departament_new_name" value="Save">
+            </div>
+        </form>
+        <h1 class="your-style-h4">Want to remove {{ department['name'] }}?</h1>
+
+        <div id="danylo_add">
+            <a type='submit' id="remove_dep" href={{ url_for('department_remove', department_id=department['id']) }}>Remove</a>
+        </div>
+    </div>
+{% endblock %}

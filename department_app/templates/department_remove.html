@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Remove {{ department['name'] }}{% endblock %}
+
+{% block content %}
+    <div id="table8">
+        <div id="header_2">
+            <a id='a_1' href={{ url_for('edit_department', department_id=department['id']) }}><img id='a_1'
+                                                                                                   src={{ url_for('static', filename='images/back.png') }}/></a>
+            <h1 class="your-style-h4">Are you sure you want to remove {{ department['name'] }}?</h1>
+        </div>
+        <form action="" method="POST">
+            <div id="danylo_add">
+                <input type='submit' id="edit_employee" name="departament_new_name" value="Remove">
+            </div>
+        </form>
+    </div>
+{% endblock %}

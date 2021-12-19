@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href={{ url_for('static', filename='/style.css') }}>
+    <title>Departments//Employee</title>
+</head>
+<body>
+<div id="main_page">
+    <h1 class="main_choose">Choose what you want to see</h1>
+    <h1 class="your-style"><a href={{ url_for('departments') }}>Departments</a>//<a
+            href={{ url_for('employees') }}>Employees</a></h1>
+</div>
+</body>
+</html>

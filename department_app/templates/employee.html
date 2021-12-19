@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{ employee['name'] }}{% endblock %}
+
+{% block content %}
+    <div id="table4">
+        <div id="header_1">
+            <a id='a_1' href={{ url_for('department_get', department_id=employee['department_id']) }}><img id='a_1'
+                                                                                                           src={{ url_for('static', filename='images/back.png') }}/></a>
+        </div>
+        <div id="employee_pht">
+            <img src={{ url_for('static', filename='images/employee_photo.png') }}>
+        </div>
+        <div>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_name"><img id='info_image'
+                                                                                                       src={{ url_for('static', filename='images/edit.png') }}></a>Name> {{ employee['name'] }}
+            </p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_salary"><img id='info_image'
+                                                                                                         src={{ url_for('static', filename='images/edit.png') }}></a>Salary> {{ employee['salary'] }}$
+            </p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_birthday"><img
+                    id='info_image' src={{ url_for('static', filename='images/edit.png') }}></a>Birthday> {{ employee['birthday'] }}</p>
+            <p class="your-style-h9"><a id="a_1" href="/employees/{{ employee['id'] }}/edit_department"><img
+                    id='info_image' src={{ url_for('static', filename='images/edit.png') }}></a>Department> {{ employee['department'] }}</p>
+        </div>
+
+        <div id="danylo_add">
+            <a type='submit' id="edit_employee"
+               href={{ url_for('remove_employee', employee_id=employee['id']) }}>Remove</a>
+        </div>
+    </div>
+{% endblock %}

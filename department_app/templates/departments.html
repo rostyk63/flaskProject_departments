@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Departments{% endblock %}
+
+{% block content %}
+    <div id="table1">
+        <div id="info">
+            <div>
+                <div id="main_info">
+                    <div id="main_info_block">
+                        <div id='info_image'></div>
+                        <div id="department_name" class="your-style-h1">Department</div>
+                        <div id="department_salary" class="your-style-h2">AVG salary</div>
+                    </div>
+                    {% for departament in departments %}
+                        <div id="main_info_block">
+                            <a id="a_1" href={{ url_for('department_get', department_id=departament['id']) }}><img
+                                    id='info_image'
+                                    src="{{ url_for('static', filename='images/info.png') }}"
+                                    alt=""></a>
+                            <div id="department_name" class="your-style-h1">{{ departament['name'] }}</div>
+                            <div id="department_salary" class="your-style-h2">{{ departament['avg_salary'] }} $</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="_add">
+                <a type='submit' id="add_employee2" href={{ url_for('create') }}>Create</a>
+            </div>
+        </div>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div id="search">
+                <div id="search_title" class="your-style-h2">Search</div>
+                {{ form.name(class='search_input', placeholder="Department name") }}
+                {{ form.min_avg_salary(class='search_input', placeholder="Min AVG salary") }}
+                {{ form.max_avg_salary(class='search_input', placeholder="Max AVG salary") }}
+                {{ form.min_employee(class='search_input', placeholder="Min amount of employees") }}
+                {{ form.max_employee(class='search_input', placeholder="Max amount of employees") }}
+                {{ form.find(id='search_button', value="Find") }}
+                <input id='search_button1' type="button" value="Reset" name="reset"
+                       onclick="window.location.href=window.location.href;">
+            </div>
+        </form>
+    </div>
+    <script>
+        function resetForm(form) {
+            // clearing inputs
+            var inputs = form.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                switch (inputs[i].type) {
+                    // case 'hidden':
+                    case 'text':
+                        inputs[i].value = '';
+                        break;
+                    case 'number':
+                        inputs[i].value = '';
+                        break;
+                    case 'checkbox':
+                        inputs[i].checked = false;
+                }
+            }
+            return false;
+        }
+    </script>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}{{ department['name'] }}{% endblock %}
+
+{% block content %}
+    <div id="table3">
+        <div id="header_1">
+            <a id='a_1' href={{ url_for('departments') }}><img src={{ url_for('static', filename='images/back.png') }}/></a>
+            <h1 class="your-style-h4">{{ department['name'] }} <a id='a_2'
+                                                                  href={{ url_for('edit_department', department_id=department['id']) }}><img
+                    src={{ url_for('static', filename='images/edit.png') }}/></a></h1>
+        </div>
+        <div id="info_block_department">
+            <div class="department_first_line">
+                <p class="your-style-h3">AVG salary {{ department['avg_salary'] }}$</p>
+                <p class="your-style-h3">Amount <img id='employee_img'
+                                                     src={{ url_for('static', filename='images/employee.png') }}/> {{ department['employee_count'] }}
+                </p>
+            </div>
+            <div class="department_second_line">
+                <p class="your-style-h3">Max salary {{ department['max_salary'] }}$</p>
+                <p class="your-style-h3">Min salary {{ department['min_salary'] }}$</p>
+            </div>
+        </div>
+        <h1 class="your-style-h5">Employees</h1>
+        <div id="info2">
+            <div id="main_info2">
+                <div id="main_info_block3">
+                    <div id='info_image'></div>
+                    <div id="department_name" class="your-style-h6">Name</div>
+                    <div id="department_salary" class="your-style-h6">Salary</div>
+                    <div id="department_date1" class="your-style-h6">Date of birth</div>
+                </div>
+                {% for employee in employees %}
+                    <div id="main_info_block3">
+                        <a id="a_1" href={{ url_for('employee_get', employee_id=employee['id']) }}><img id='info_image'
+                                                                                                        src={{ url_for('static', filename='images/edit.png') }}></a>
+                        <div id="department_name" class="your-style-h6">{{ employee['name'] }}</div>
+                        <div id="department_salary" class="your-style-h6">{{ employee['salary'] }}$</div>
+                        <div id="department_date1" class="your-style-h6">{{ employee['date_of_birth'] }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <form action="" method="post">
+            <div id="_add">
+                <a type='submit' id="add_employee2" href={{ url_for('add_employee', department_id=department['id']) }}>Add</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
