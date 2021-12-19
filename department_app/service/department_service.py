@@ -41,7 +41,7 @@ def get_department_ids() -> list:
     return result
 
 
-def get_amount_of_employees(department_id: str | int) -> int:
+def get_amount_of_employees(department_id: int) -> int:
     """
     Fetches the number of employees in a particular department by given department_id
 
@@ -57,7 +57,7 @@ def get_amount_of_employees(department_id: str | int) -> int:
     return len(db.session.query(Employee).join(Department).filter(Department.id == department_id).all())
 
 
-def get_avg_salary(department_id: int | str) -> int:
+def get_avg_salary(department_id: int) -> int:
     """
     Fetches the average salary of employees in a particular department by given department_id
 
@@ -92,7 +92,7 @@ def get_department_by_name(department_name: str) -> list[Department]:
     return Department.query.filter(Department.name == department_name).all()
 
 
-def get_department_by_id(department_id: int | str) -> Department:
+def get_department_by_id(department_id: int) -> Department:
     """
      Fetches the department by given department_id
 
@@ -108,7 +108,7 @@ def get_department_by_id(department_id: int | str) -> Department:
     return db.session.query(Department).filter_by(id=department_id).first()
 
 
-def get_max_salary(department_id: int | str) -> int:
+def get_max_salary(department_id: int) -> int:
     """
     Fetches max salary of employees in a particular department by given department_id
 
@@ -128,7 +128,7 @@ def get_max_salary(department_id: int | str) -> int:
             desc(Employee.salary)).first()[0]
 
 
-def get_min_salary(department_id: int | str) -> int:
+def get_min_salary(department_id: int) -> int:
     """
     Fetches min salary of employees in a particular department by given department_id
 
@@ -148,7 +148,7 @@ def get_min_salary(department_id: int | str) -> int:
             0]
 
 
-def get_employees_by_department(department_id: int | str) -> list[Employee]:
+def get_employees_by_department(department_id: int) -> list[Employee]:
     """
     Fetches all employees in a particular department by given department_id
 
@@ -164,7 +164,7 @@ def get_employees_by_department(department_id: int | str) -> list[Employee]:
     return db.session.query(Employee).filter_by(department_id=department_id).all()
 
 
-def update_department_name(department_id: int | str, name: str) -> None:
+def update_department_name(department_id: int, name: str) -> None:
     """
     Editing department name with given department_id
 
@@ -208,7 +208,7 @@ def create_department(name: str) -> None:
     db.session.commit()
 
 
-def add_employee_to_department(name: str, salary: int | str, birthday: str, department: Department) -> None:
+def add_employee_to_department(name: str, salary: int, birthday: str, department: Department) -> None:
     """
     Adding new employee to department by given department
 
@@ -233,7 +233,7 @@ def add_employee_to_department(name: str, salary: int | str, birthday: str, depa
     db.session.commit()
 
 
-def remove_department(department_id: int | str) -> None:
+def remove_department(department_id: int) -> None:
     """
     Removing department by given department_id
 

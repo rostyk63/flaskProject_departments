@@ -12,7 +12,7 @@ def get_all_employee() -> list[Employee]:
     return Employee.query.all()
 
 
-def get_employee_by_id(employee_id: int | str) -> Employee:
+def get_employee_by_id(employee_id: int) -> Employee:
     """
     Fetches the employee with given id
 
@@ -29,7 +29,7 @@ def get_employee_by_id(employee_id: int | str) -> Employee:
     return employee
 
 
-def get_employee_department(department_id: int | str) -> str:
+def get_employee_department(department_id: int) -> str:
     """
     Fetches department name of employee with given department_id(Foreign Key of Employee)
 
@@ -48,7 +48,7 @@ def get_employee_department(department_id: int | str) -> str:
     return db.session.query(Department.name).filter(Department.id == department_id).all()[0][0]
 
 
-def get_employee_department_id(employee_id: int | str) -> str:
+def get_employee_department_id(employee_id: int) -> str:
     """
     Fetches department id of employee with given employee_id
 
@@ -65,7 +65,7 @@ def get_employee_department_id(employee_id: int | str) -> str:
     return db.session.query(Employee.department_id).filter(Employee.id == employee_id).all()[0][0]
 
 
-def update_employee_name(employee_id: int | str, name: str) -> None:
+def update_employee_name(employee_id: int, name: str) -> None:
     """
     Editing employee name with given employee_id
 
@@ -90,7 +90,7 @@ def update_employee_name(employee_id: int | str, name: str) -> None:
     db.session.commit()
 
 
-def update_employee_birthday(employee_id: int | str, birthday: str) -> None:
+def update_employee_birthday(employee_id: int, birthday: str) -> None:
     """
     Editing employee birthday with given employee_id
 
@@ -115,7 +115,7 @@ def update_employee_birthday(employee_id: int | str, birthday: str) -> None:
     db.session.commit()
 
 
-def update_employee_salary(employee_id: int | str, salary: int | str) -> None:
+def update_employee_salary(employee_id: int, salary: int) -> None:
     """
     Editing employee salary with given employee_id
 
@@ -140,7 +140,7 @@ def update_employee_salary(employee_id: int | str, salary: int | str) -> None:
     db.session.commit()
 
 
-def update_employee_department(employee_id: int | str, department_name: str) -> None:
+def update_employee_department(employee_id: int, department_name: str) -> None:
     """
      Editing employee department with given employee_id
 
@@ -165,7 +165,7 @@ def update_employee_department(employee_id: int | str, department_name: str) -> 
     db.session.commit()
 
 
-def delete_employee(employee_id: int | str) -> None:
+def delete_employee(employee_id: int) -> None:
     """
     Removing employee with given employee_id
 
