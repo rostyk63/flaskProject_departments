@@ -17,11 +17,24 @@ a {
 }
 
 
+/*@font-face {*/
+/*    font-family: "AC Boucle", sans-serif;*/
+/*    src: url("/department_app/static/fonts/ACBoucle.ttf") format("ttf"),*/
+/*    url("/department_app/static/fonts/ACBoucle.eot") format('eot');*/
+/*}*/
 @font-face {
-    font-family: "AC Boucle", sans-serif;
-    src: url("/department_app/static/fonts/ACBoucle.ttf") format("ttf"),
-    url("/department_app/static/fonts/ACBoucle.eot") format('eot');
+	font-family: "AC Boucle";
+	src: url("/department_app/static/fonts/ac-boucle/ac-boucle.eot"); /* IE9 Compat Modes */
+	src: url("/department_app/static/fonts/ac-boucle/ac-boucle.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("/department_app/static/fonts/ac-boucle/ac-boucle.otf") format("opentype"), /* Open Type Font */
+		url("/department_app/static/fonts/ac-boucle/ac-boucle.svg") format("svg"), /* Legacy iOS */
+		url("/department_app/static/fonts/ac-boucle/ac-boucle.ttf") format("truetype"), /* Safari, Android, iOS */
+		url("/department_app/static/fonts/ac-boucle/ac-boucle.woff") format("woff"), /* Modern Browsers */
+		url("/department_app/static/fonts/ac-boucle/ac-boucle.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
 }
+
 
 
 .your-style {
