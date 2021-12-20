@@ -27,7 +27,7 @@ The mode is designed for viewing the list of departments.
 ***Main scenario:***
 
 - User selects *"Departments"* at main page
-!['Main' view](./srs_images/main_page.png)
+!['Main' view](./srs_images/main_page.PNG)
 - Application displays list of departments (Pic. 1.1)
 
 !['Departments' view](./srs_images/departments.png)
