@@ -30,7 +30,7 @@ The mode is designed for viewing the list of departments.
 !['Main' view](./srs_images/main_page.PNG)
 - Application displays list of departments (Pic. 1.1)
 
-!['Departments' view](./srs_images/departments.png)
+!['Departments' view](./srs_images/departments.PNG)
 Pic. 1.1 List of departments
 
 The list displays the following columns:
@@ -61,7 +61,7 @@ The list displays the following columns:
 - User enters data and presses the *"Return"* button
 - Data don’t save in database; list of departments is displaying to user.
 
-!['Create department' view](./srs_images/create_dep.png)
+!['Create department' view](./srs_images/create_dep.PNG)
 Pic. 1.2 Adding a department
 
 When adding a department the following details are entered:
@@ -88,7 +88,7 @@ The mode is designed for viewing a particular department.
 - User presses the *"Return"* button
 - List of departments is displaying to user.
 
-!['Departments' view](./srs_images/Department.png)
+!['Departments' view](./srs_images/Department.PNG)
 Pic. 1.3 Department
 
 The page displays the following:
@@ -120,7 +120,7 @@ The page displays the following:
 - User enters data and presses the *"Return"* button
 - Data don’t save in database, then list of employees is displaying to user.
 
-!['Add employee' view](./srs_images/employee_add.png)
+!['Add employee' view](./srs_images/employee_add.PNG)
 Pic. 2.3 Adding an employee
 
 When adding an employee the following details are entered:
@@ -148,7 +148,7 @@ When adding an employee the following details are entered:
 - User enters data and presses the *"Return"* button
 - Data don’t save in database, then department is displaying to user.
 
-!['Edit department' view](./srs_images/edit_dep.png)
+!['Edit department' view](./srs_images/edit_dep.PNG)
 Pic. 1.4 Editing a department
 
 When editing a department the following details are entered:
@@ -168,9 +168,9 @@ Constraints for data validation:
 - User confirms the removal of the department, and receives a notification of success.
 - *"Return"* button redirects to departments page
 - List of departments is displaying to user.
-!['Remove department' view](./srs_images/remove_dep.png)
+!['Remove department' view](./srs_images/remove_dep.PNG)
 
-!['Removed department' view](./srs_images/removed_dep.png)
+!['Removed department' view](./srs_images/removed_dep.PNG)
 
 ### 2. Employees
 
@@ -180,12 +180,12 @@ The mode is designed for viewing the list of employees.
 
 ***Main scenario:***
 - User selects *"Employees"* at main page
-!['Employees' view](./srs_images/main_page.png)
+!['Employees' view](./srs_images/main_page.PNG)
 
 - User selects *"Employees"* at main page
 - Application displays list of employees (Pic. 2.1)
 
-!['Employees' view](./srs_images/employees.png)
+!['Employees' view](./srs_images/employees.PNG)
 Pic. 2.1 List of employees
 
 The list displays the following columns:
@@ -216,7 +216,7 @@ The mode is designed for viewing a particular employee.
 - User presses the *"Return"* button
 - Department of is displaying to user.
 
-!['Departments' view](./srs_images/employee.png)
+!['Departments' view](./srs_images/employee.PNG)
 Pic. 2.2 Employee
 
 The page displays the following:
@@ -245,7 +245,7 @@ The page displays the following:
 - User enters data and presses the *"Return"* button
 - Data don’t save in database, then employee is displaying to user.
 
-!['Edit employee' view](./srs_images/edit_employee.png)
+!['Edit employee' view](./srs_images/edit_employee.PNG)
 Pic. 2.4 Editing an employee
 
 When editing an employee the following details are entered:
@@ -269,6 +269,6 @@ Constraints for data validation:
 - *"Return"* button redirects to employees page
 - List of employees is displaying to user.
 
-!['Remove employee view'](./srs_images/remove_employee.png)
+!['Remove employee view'](./srs_images/remove_employee.PNG)
 
-!['Remove employee view'](./srs_images/removed_employee.png)
+!['Remove employee view'](./srs_images/removed_employee.PNG)
