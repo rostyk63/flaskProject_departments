@@ -2,12 +2,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import logging
-from config import ProductionConfig
+from config import DevelopmentConfig
 import os
 
 MIGRATION_DIR = os.path.join('department_app', 'migrations')
 app = Flask(__name__)
-app.config.from_object(ProductionConfig)
+app.config.from_object(DevelopmentConfig)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, directory=MIGRATION_DIR)

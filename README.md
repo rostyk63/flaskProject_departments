@@ -16,17 +16,14 @@
 
 ```
 pip install -r requirements.txt
+python setup.py develop
 ```
 
 - ### Set the following variable in config.py:
 
 ```
 SECRET_KEY=<your_secret_key>
-```
 
-- #### Configure PostgreSQL database
-
-```
 DATABASE_URL=postgres://<your_username>:<your_password>@<your_database_url>/<your_database_name>
 ```
 
@@ -39,7 +36,7 @@ python -m flask db upgrade
 - ### (Optional) Populate the database with sample data
 
 ```
-python populate_db.py
+python department_app/models/populate_database.py
 ```
 
 - ### Run the project locally:
