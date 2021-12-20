@@ -7,7 +7,7 @@
     {% endfor %}
     <div id="table4">
         <div id="header_1">
-            <a id='a_1' href={{ url_for('add_employee', department_id=department['department_id']) }}><img id='a_1'
+            <a id='a_1' href={{ url_for('department_get', department_id=department['id']) }}><img id='a_1'
                                                                                              src={{ url_for('static', filename='images/back.png') }}/></a>
         </div>
         <div id="employee_pht">
