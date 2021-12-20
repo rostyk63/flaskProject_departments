@@ -13,7 +13,17 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def page_not_found(e):
+def server_error(e):
+    """
+    Renders 'error500_page.html' template
+    :return: rendered 'error500_page.html' template
+    """
+    app.logger.debug('Error 500 was handled')
+    return render_template('error500_page.html'), 500
+
+
+@app.errorhandler(ValueError)
+def server_error1(e):
     """
     Renders 'error500_page.html' template
     :return: rendered 'error500_page.html' template
