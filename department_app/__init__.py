@@ -2,12 +2,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import logging
-from config import DevelopmentConfig
+
 import os
 
 MIGRATION_DIR = os.path.join('department_app', 'migrations')
 app = Flask(__name__)
-app.config.from_object(DevelopmentConfig)
+
+from dotenv import load_dotenv
+
+load_dotenv('.env')
+
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, directory=MIGRATION_DIR)

@@ -45,7 +45,7 @@ def get_employee_department(department_id: int) -> str:
     employee_department = db.session.query(Employee).filter(Employee.department_id == department_id).first()
     if employee_department is None:
         raise ValueError('Invalid department ID')
-    return db.session.query(Department.name).filter(Department.id == department_id).all()[0][0]
+    return db.session.query(Department.name).filter(Department.id == department_id).first()[0]
 
 
 def get_employee_department_id(employee_id: int) -> str:
@@ -62,7 +62,7 @@ def get_employee_department_id(employee_id: int) -> str:
     employee = db.session.query(Employee).filter_by(id=employee_id).first()
     if employee is None:
         raise ValueError('Invalid employee ID')
-    return db.session.query(Employee.department_id).filter(Employee.id == employee_id).all()[0][0]
+    return db.session.query(Employee.department_id).filter(Employee.id == employee_id).first()[0]
 
 
 def update_employee_name(employee_id: int, name: str) -> None:
