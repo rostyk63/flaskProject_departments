@@ -22,8 +22,12 @@ python setup.py develop
 - ### Set the following variable in config.py:
 
 ```
-SECRET_KEY=<your_secret_key>
+APP_SETTINGS=config.ProductionConfig
 
+SECRET_KEY=<your_secret_key>
+```
+- ### Configure PostgreSQL database
+```
 DATABASE_URL=postgres://<your_username>:<your_password>@<your_database_url>/<your_database_name>
 ```
 
