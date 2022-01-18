@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-- ### Set the following variable in config.py:
+- ### Set the following environment variables:
 
 ```
 APP_SETTINGS=config.ProductionConfig
